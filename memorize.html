@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="memorize.css">
+    <title>Document</title>
+</head>
+<body>
+        <header>
+            <div class="logo">
+                 <img src="img01/icono3.png" alt="Icono del juego">
+                 <h1 class="gameName">Arcana Memory Game</h1>
+                </div>
+        </header>
+    <main>
+        <section class="section1">
+            <table class="cartasAling">
+                <tr>
+                   <td><button id="0" onclick="unCover(0)"></button></td>
+                   <td><button id="1" onclick="unCover(1)"></button></td>
+                   <td><button id="2" onclick="unCover(2)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="3" onclick="unCover(3)"></button></td>
+                    <td><button id="4" onclick="unCover(4)"></button></td>
+                    <td><button id="5" onclick="unCover(5)"></button></td>
+                 </tr>
+                 <tr>
+                    <td><button id="6" onclick="unCover(6)"></button></td>
+                    <td><button id="7" onclick="unCover(7)"></button></td>
+                    <td><button id="8" onclick="unCover (8)"></button></td>
+                 </tr>
+                 <tr>
+                    <td><button id="9" onclick="unCover(9)"></button></td>
+                    <td><button id="10" onclick="unCover(10)"></button></td>
+                    <td><button id="11" onclick="unCover(11)"></button></td>
+                 </tr>
+            </table>
+
+        </section>
+
+
+        <section class="section2">
+            <div>
+                <p class="inputName">Name</p>
+                 <h2 id="successes" class="stadistics">0</h2>
+            </div>
+            <div>
+                <p class="timeCounter">Time</p>
+                <h2 id="timeLeft" class="stadistics">Time: 30</h2>
+             </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Powered by AZARGame
+             <br>
+         design by FemDev Latam</p>
+    </footer>
+
+    <script src="arcanaMemory.js"></script>
+
+</body>
+</html>

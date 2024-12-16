@@ -1,0 +1,100 @@
+body{
+    background: #F2E8D9;
+    font-family: kalam;
+    color: black;
+    margin: 100;
+}
+
+header {
+    display:flex;
+    background-color: #E7D1CD;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo img {
+    align-items: center;
+    height: 50px;
+}
+
+main {
+    border: 1px solid black;
+    margin: 30px auto;
+    align-items: center;
+}
+
+
+.section1 {
+
+    background-color: #E7D1CD;
+    padding: 0 10px 10px;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    color: black;
+}
+
+
+
+.stadistics {
+    
+    border: 1px solid #b48c8c;
+    height: 85px;
+    border-radius: 6px;
+    background-color: #E7D1CD;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.cartasAling {
+    display: flex;
+    justify-content: center;
+    justify-items: stretch;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 20px;
+}
+
+
+.section2 {
+    display: flex;
+    background-color: #F2E8D9;
+    text-align: center;
+    /* align-items: center; */
+    justify-content: center;
+    justify-items: stretch;
+    margin: 10px;
+}
+
+.timeCounter {
+     font-size: 30px;
+}
+
+.inputName {
+    font-size: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #E7D1CD;
+    font-size: 15px;
+}
+
