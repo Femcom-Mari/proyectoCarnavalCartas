@@ -1,0 +1,14 @@
+header {
+    display:flex;
+    background-color: #E7D1CD;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer {
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #E7D1CD;
+    font-size: 15px;
+}
