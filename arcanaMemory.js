@@ -7,7 +7,7 @@ let secondResult = null;
 let successes = 0;
 let time = false;
 let timer = 30;
-let countdownTime = null
+let countdownTime = null;
 
 
 let showSuccesses = document.getElementById('successes')
@@ -15,7 +15,7 @@ let showTime = document.getElementById('timeLeft')
 
 
 let numbers =  [1,1,2,2,3,3,4,4,5,5,6,6];
-numbers = numbers.sort(()=>{return Math.random ()-0.5})
+numbers = numbers.sort(()=>{return Math.random ()-0.5});
 console.log(numbers)
 
 
@@ -23,19 +23,20 @@ console.log(numbers)
 
 function countTime(){
     countdownTime = setInterval(()=> {
+    showTime.innerHTML = `Remaining time ${timer} seconds`;
     timer--;
-    showTime.innerHTML = `Timepo ${timer} segundos`;
     if(timer == 0){
     clearInterval(countdownTime);
-    blockCards();
+    blockCards(numbers);
     }
-    },1000)
+   
+  },1000,timer);
 }
 
-function blockCards(){
+function blockCards(numbers){
     for (let i = 0; i<=11; i++){
         let blockCard = document.getElementById(i);
-        blockCard.innerHTML = numbers [i]
+        blockCard.innerHTML = numbers[i];
         blockCard.disabled = true;
     }
 }
@@ -45,44 +46,40 @@ function unCover(id){
 
     if(time == false){
 
-        countTime();
-        time = true;
-        
+      countTime(); 
+      time = true;
     }
 
     unCoverCards++;
-    console.log(unCoverCards)
+    console.log(unCoverCards); 
+   
 
-    if(unCoverCards == 1){
-        //mostrar el primer numero
+     if (unCoverCards == 1){
         card1 = document.getElementById(id);
         firstResult = numbers[id];
-        card1.innerHTML = firstResult;
-   
-    card1.disabled = true
-    }
-    else if (unCoverCards==2) {
-        card2 = document.getElementById (id);
+        card1.innerHTML = `<img src="./images/${firstResult}.png"  alt="Card image">`;
+        card1.disabled = true;
+        
+     }else if (unCoverCards==2){
+        card2 = document.getElementById(id);
         secondResult = numbers[id];
-        card2.innerHTML = secondResult;
-
-    card2.disabled = true
+        card2.innerHTML =  `<img src="./images/${secondResult}.png"  alt="card image">`;
+        card2.disabled = true;
     
-
     if(firstResult == secondResult){
-        unCoverCards = 0;
-        card1.disabled = false
+        unCoverCards = 0; 
+        card1.disabled = false;
         successes++
         showSuccesses.innerHTML = `Successes: ${successes}`;
-        
-     if (successes == 8) {
-        showSuccesses.innerHTML = `Successes: ${successes}, Ganaste!`;
+
+        if(successes==8){
+        showSuccesses.innerHTML = `Successes: ${successes}` ;
+        showTime.innerHTML = `Fantastic!`
         }
-    }
-
-    else{
-
-        setTimeout(()=>{
+     
+   
+    }else{
+            setTimeout(()=>{
             card1.innerHTML = "";
             card2.innerHTML = "";
             card1.disabled = false
