@@ -13,6 +13,11 @@ let countdownTime = null
 let showSuccesses = document.getElementById('successes')
 let showTime = document.getElementById('timeLeft')
 
+let winnerAudio = new Audio('.sounds/Win.mp3');
+let loseAudio = new Audio('./sounds/lose.mp3');
+let clickAudio = new Audio('./sounds/click.mp3');
+let rightAudio = new Audio ('./sounds/good.mp3');
+let wrongAudio = new Audio ('./sounds/bad.mp3');
 
 let numbers =  [1,1,2,2,3,3,4,4,5,5,6,6];
 numbers = numbers.sort(()=>{return Math.random ()-0.5})
@@ -28,6 +33,7 @@ function countTime(){
     if(timer == 0){
     clearInterval(countdownTime);
     blockCards();
+    loseAudio.play()
     }
     },1000)
 }
@@ -46,8 +52,7 @@ function unCover(id){
     if(time == false){
 
         countTime();
-        time = true;
-        
+        time = true;  
     }
 
     unCoverCards++;
@@ -55,13 +60,16 @@ function unCover(id){
 
     if(unCoverCards == 1){
         //mostrar el primer numero
+        clickAudio.play()
         card1 = document.getElementById(id);
         firstResult = numbers[id];
         card1.innerHTML = firstResult;
+        
    
     card1.disabled = true
     }
     else if (unCoverCards==2) {
+        wrongAudio.play()
         card2 = document.getElementById (id);
         secondResult = numbers[id];
         card2.innerHTML = secondResult;
@@ -74,10 +82,13 @@ function unCover(id){
         card1.disabled = false
         successes++
         showSuccesses.innerHTML = `Successes: ${successes}`;
+        rightAudio.play()
         
      if (successes == 8) {
+        winnerAudio.play()
         showSuccesses.innerHTML = `Successes: ${successes}, Ganaste!`;
         }
+        
     }
 
     else{
