@@ -24,7 +24,7 @@ console.log(numbers)
 function countTime(){
     countdownTime = setInterval(()=> {
     timer--;
-    showTime.innerHTML = `Timepo ${timer} segundos`;
+    showTime.innerHTML = ` 00:${timer}`;
     if(timer == 0){
     clearInterval(countdownTime);
     blockCards();
