@@ -7,7 +7,8 @@ document.getElementById('startButton').addEventListener('click', function() {
         errorDiv.textContent = 'Please enter a valid name with only letters.';
     } else {
         errorDiv.textContent = '';
-        // Redirect to memorize.html
-        window.location.href = 'memorize.html';
+        // Redirect to memorize.html with the name in the URL
+        const encodedName = encodeURIComponent(nameInput);
+        window.location.href = `memorize.html?name=${encodedName}`;
     }
 });
