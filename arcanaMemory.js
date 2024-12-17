@@ -1,4 +1,3 @@
-
 let unCoverCards = 0;
 let card1 = null;
 let card2 = null;
@@ -8,7 +7,6 @@ let successes = 0;
 let time = false;
 let timer = 30;
 let countdownTime = null;
-
 
 let showSuccesses = document.getElementById('successes')
 let showTime = document.getElementById('timeLeft')
@@ -35,7 +33,6 @@ function countTime(){
     blockCards(numbers);
     loseAudio.play()
     }
-   
   },1000,timer);
 }
 
@@ -49,13 +46,10 @@ function blockCards(numbers){
 
 //funcion principal
 function unCover(id){
-
     if(time == false){
-
         countTime();
         time = true;  
     }
-
     unCoverCards++;
     console.log(unCoverCards)
 
@@ -67,14 +61,7 @@ function unCover(id){
         card1.innerHTML = `<img src="./images/${firstResult}.png"  alt="Card image">`;
         card1.disabled = true;
         
-     }else if (unCoverCards==2){
-        card2 = document.getElementById(id);
-        card1.innerHTML = firstResult;
-        
-   
-    card1.disabled = true
-    }
-    else if (unCoverCards==2) {
+    }else if (unCoverCards==2) {
         wrongAudio.play()
         card2 = document.getElementById (id);
         secondResult = numbers[id];
@@ -88,15 +75,12 @@ function unCover(id){
         showSuccesses.innerHTML = `Successes: ${successes}`;
         rightAudio.play()
         
-     if (successes == 8) {
-        winnerAudio.play()
-        showSuccesses.innerHTML = `Successes: ${successes}, Ganaste!`;
+    if(successes==8){
+        showSuccesses.innerHTML = `Successes: ${successes}` ;
+        showTime.innerHTML = `Fantastic!`
         }
         
-    }
-
-    else{
-
+    }else{
         setTimeout(()=>{
             card1.innerHTML = "";
             card2.innerHTML = "";
