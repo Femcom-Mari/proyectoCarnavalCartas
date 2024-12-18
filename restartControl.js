@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.display = 'none';
     });
 
-    // Cerrar el popup si se hace clic fuera de él
+
     popup.addEventListener('click', function(e) {
         if (e.target === popup) {
             popup.style.display = 'none';

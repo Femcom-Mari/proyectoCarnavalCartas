@@ -10,10 +10,9 @@ function toggleSound() {
     soundEnabled = !soundEnabled;
     const soundIcon = document.getElementById('sound-icon');
     soundIcon.src = soundEnabled ? 'img01/soundOn.png' : 'img01/soundOff.png';
-    
-    // Guardar preferencia en localStorage
     localStorage.setItem('soundEnabled', soundEnabled);
 }
+
 
 function playSound(audio) {
     if (soundEnabled) {
@@ -21,7 +20,7 @@ function playSound(audio) {
     }
 }
 
-// Inicializar el estado del sonido desde localStorage
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedSound = localStorage.getItem('soundEnabled');
     if (savedSound !== null) {
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Hacer las funciones y variables disponibles globalmente
+
 window.toggleSound = toggleSound;
 window.playSound = playSound;
 window.soundEnabled = soundEnabled;
