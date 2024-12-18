@@ -11,12 +11,6 @@ let countdownTime = null;
 let showSuccesses = document.getElementById('successes')
 let showTime = document.getElementById('timeLeft')
 
-let winnerAudio = new Audio('.sounds/Win.mp3');
-let loseAudio = new Audio('./sounds/lose.mp3');
-let clickAudio = new Audio('./sounds/click.mp3');
-let rightAudio = new Audio ('./sounds/good.mp3');
-let wrongAudio = new Audio ('./sounds/bad.mp3');
-
 let numbers =  [1,1,2,2,3,3,4,4,5,5,6,6];
 numbers = numbers.sort(()=>{return Math.random ()-0.5});
 console.log(numbers)
@@ -31,7 +25,7 @@ function countTime(){
     if(timer == 0){
     clearInterval(countdownTime);
     blockCards(numbers);
-    loseAudio.play()
+    playSound(loseAudio);
     }
   },1000,timer);
 }
@@ -55,14 +49,14 @@ function unCover(id){
 
     if(unCoverCards == 1){
         //mostrar el primer numero
-        clickAudio.play()
+        playSound(clickAudio);
         card1 = document.getElementById(id);
         firstResult = numbers[id];
         card1.innerHTML = `<img src="./images/${firstResult}.png"  alt="Card image">`;
         card1.disabled = true;
         
     }else if (unCoverCards==2) {
-        wrongAudio.play()
+       playSound(clickAudio);
         card2 = document.getElementById (id);
         secondResult = numbers[id];
         card2.innerHTML =  `<img src="./images/${secondResult}.png"  alt="card image">`;
@@ -73,12 +67,12 @@ function unCover(id){
         card1.disabled = false;
         successes++
         showSuccesses.innerHTML = `Successes: ${successes}`;
-        rightAudio.play()
+        playSound(rightAudio);
         
         if(successes==6){
             showSuccesses.innerHTML = `Successes: ${successes}` ;
             showTime.innerHTML = `Fantastic!`;
-            winnerAudio.play();
+            playSound(winnerAudio);
             clearInterval(countdownTime);
         }
         

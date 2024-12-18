@@ -1,32 +1,39 @@
-const winnerAudio = new Audio('.sounds/Win.mp3');
+const winnerAudio = new Audio('./sounds/Win.mp3');
 const loseAudio = new Audio('./sounds/lose.mp3');
 const clickAudio = new Audio('./sounds/click.mp3');
 const rightAudio = new Audio('./sounds/good.mp3');
 const wrongAudio = new Audio('./sounds/bad.mp3');
-let isSoundOn = true; // Variable para controlar el estado del sonido
 
-let soundEnabled = true; // Control del sonido
+let soundEnabled = true;
 
-// Función para alternar el sonido
-function toggleSound(soundIcon) {
+function toggleSound() {
     soundEnabled = !soundEnabled;
+    const soundIcon = document.getElementById('sound-icon');
     soundIcon.src = soundEnabled ? 'img01/soundOn.png' : 'img01/soundOff.png';
+    
+    // Guardar preferencia en localStorage
+    localStorage.setItem('soundEnabled', soundEnabled);
 }
 
-// Función para reproducir sonidos con control
 function playSound(audio) {
     if (soundEnabled) {
         audio.play();
     }
 }
 
-// Exportar funciones y audios
-export {
-    winnerAudio,
-    loseAudio,
-    clickAudio,
-    rightAudio,
-    wrongAudio,
-    toggleSound,
-    playSound
-};
+// Inicializar el estado del sonido desde localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedSound = localStorage.getItem('soundEnabled');
+    if (savedSound !== null) {
+        soundEnabled = savedSound === 'true';
+        const soundIcon = document.getElementById('sound-icon');
+        if (soundIcon) {
+            soundIcon.src = soundEnabled ? 'img01/soundOn.png' : 'img01/soundOff.png';
+        }
+    }
+});
+
+// Hacer las funciones y variables disponibles globalmente
+window.toggleSound = toggleSound;
+window.playSound = playSound;
+window.soundEnabled = soundEnabled;
