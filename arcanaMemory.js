@@ -37,6 +37,7 @@ function blockCards(numbers){
     for (let i = 0; i<=11; i++){
         let blockCard = document.getElementById(i);
         blockCard.innerHTML = numbers[i];
+        blockCard.innerHTML = `<img src="./images/${numbers[i]}.png" alt="Card image">`;
         blockCard.disabled = true;
     }
 }
@@ -52,8 +53,9 @@ function unCover(id){
 
     unCoverCards++;
     console.log(unCoverCards); 
-   
 
+    
+    
      if (unCoverCards == 1){
         card1 = document.getElementById(id);
         firstResult = numbers[id];
@@ -63,7 +65,7 @@ function unCover(id){
      }else if (unCoverCards==2){
         card2 = document.getElementById(id);
         secondResult = numbers[id];
-        card2.innerHTML =  `<img src="./images/${secondResult}.png"  alt="card image">`;
+        card2.innerHTML =  `<img src="./images/${secondResult}.png"  alt="Card image">`;
         card2.disabled = true;
     
     if(firstResult == secondResult){
@@ -72,7 +74,8 @@ function unCover(id){
         successes++
         showSuccesses.innerHTML = `Successes: ${successes}`;
 
-        if(successes==8){
+
+        if(successes==6){
         showSuccesses.innerHTML = `Successes: ${successes}` ;
         showTime.innerHTML = `Fantastic!`
         }
@@ -80,8 +83,8 @@ function unCover(id){
    
     }else{
             setTimeout(()=>{
-            card1.innerHTML = "";
-            card2.innerHTML = "";
+            card1.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+            card2.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
             card1.disabled = false
             card2.disabled = false
             unCoverCards = 0;
