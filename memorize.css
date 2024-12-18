@@ -98,3 +98,8 @@ footer {
     font-size: 15px;
 }
 
+@media all and (max-width: 992px) {
+    .header  .img {
+        text-align: left;
+    }
+}
