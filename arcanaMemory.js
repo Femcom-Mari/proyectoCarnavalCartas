@@ -25,7 +25,7 @@ function countTime(){
     if(timer == 0){
     clearInterval(countdownTime);
     blockCards(numbers);
-    loseAudio.play();
+    playSound(loseAudio);
     showTime.innerHTML = `Game Over! YOU LOSE!`;
     }
   },1000,timer);
@@ -35,7 +35,7 @@ function blockCards(numbers){
     for (let i = 0; i<=11; i++){
         let blockCard = document.getElementById(i);
         blockCard.innerHTML = `<img src="./images/${numbers[i]}.png" alt="Card image">`;
-        blockCard.disabled = true;
+        
     }
 }
 
@@ -70,7 +70,6 @@ function unCover(id){
         playSound(rightAudio);
         
     if(successes==6){
-
             showTime.innerHTML = `Fantastic!`;
             winnerAudio.play();
             clearInterval(countdownTime);
