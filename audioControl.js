@@ -1,4 +1,4 @@
-const winnerAudio = new Audio('./sounds/Win.mp3');
+const winnerAudio = new Audio('.sounds/Win.mp3');
 const loseAudio = new Audio('./sounds/lose.mp3');
 const clickAudio = new Audio('./sounds/click.mp3');
 const rightAudio = new Audio('./sounds/good.mp3');

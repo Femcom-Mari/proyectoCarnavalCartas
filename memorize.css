@@ -6,11 +6,11 @@ body{
 }
 
 header {
-    display:flex;
+    display: flex;
     background-color: #E7D1CD;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
 .logo {
@@ -108,4 +108,11 @@ footer {
     .header  .img {
         text-align: left;
     }
+}
+
+.sound-icon {
+    height: 50px;
+}
+.restart-icon {
+    height: 50px;
 }
