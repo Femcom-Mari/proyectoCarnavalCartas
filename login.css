@@ -1,8 +1,6 @@
-/* Reset básico */
 * {
     margin: 30;
     padding: 0;
-
 }
 
 body {
@@ -41,17 +39,15 @@ h1.gamename {
 
 .restart-icon, .sound-icon {
     height: 50px;
-    margin-left: 10px; /* Espaciado entre los iconos */
+    margin-left: 10px; 
 }
 
 .icons-container{
     display: flex;
-    gap: 10px; /* Espacio entre botones de reset y sonido */
+    gap: 10px; 
 }
 
 
-
-/* Contenedor principal */
 .container {
     background-color: #E7D1CD;
     padding: 2rem;
@@ -91,7 +87,6 @@ input {
     width: calc(100% - 2rem);
 }
 
-/* Error */
 #error {
     margin-top: 0.5rem;
     color: red;
@@ -108,10 +103,10 @@ footer {
 }
 
 
-/* General: Asegura que header, main y footer estén en la capa superior */
+
 header, main, footer {
-    position: relative; /* Posición relativa para z-index */
-    z-index: 10; /* Capa superior */
+    position: relative; 
+    z-index: 10; 
 }
 
 /* Animación flotante (capa inferior) */

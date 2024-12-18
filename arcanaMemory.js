@@ -16,8 +16,6 @@ numbers = numbers.sort(()=>{return Math.random ()-0.5});
 console.log(numbers)
 
 
-//funciones
-
 function countTime(){
     countdownTime = setInterval(()=> {
     showTime.innerHTML = `00:${timer}`;
@@ -39,7 +37,7 @@ function blockCards(numbers){
     }
 }
 
-//funcion principal
+
 function unCover(id){
     if(time == false){
         countTime();
