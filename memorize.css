@@ -2,43 +2,53 @@ body{
     background: #F2E8D9;
     font-family: kalam;
     color: black;
-    margin: 100;
+    margin: 20px 0;
 }
 
 header {
-    display: flex;
+    display:flex;
+    flex-direction: row;
     background-color: #E7D1CD;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 5px 25px;
+    margin: 10px 0px ;
+}
+
+
+h1.gamename {
+    font-size: smaller;
+    margin: 0;
+}
+
+.logo img {
+    height: 50px;
 }
 
 .logo {
     display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: opacity 0.2s;
+    gap: 10px;
 }
 
-.logo:hover {
-    opacity: 0.8;
-}
-
-.logo img {
-    align-items: center;
+.restart-icon, .sound-icon {
     height: 50px;
+    margin-left: 10px; /* Espaciado entre los iconos */
 }
+
+.icons-container{
+    display: flex;
+    gap: 10px; /* Espacio entre botones de reset y sonido */
+}
+
 
 main {
-    border: 1px solid black;
-    margin: 30px auto;
+    display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 
 .section1 {
-
-    background-color: #E7D1CD;
     padding: 0 10px 10px;
     border-radius: 15px;
 }
@@ -63,7 +73,7 @@ button img{
 .stadistics {
     
     border: 1px solid #b48c8c;
-    height: 85px;
+    height: 50px;
     border-radius: 6px;
     background-color: #E7D1CD;
     padding: 8px 20px;
@@ -71,6 +81,7 @@ button img{
     text-align: center;
     margin: 20px;
     font-size: 30px;
+    margin: 10px;
 }
 
 .cartasAling {
@@ -94,19 +105,99 @@ button img{
     margin: 10px;
 }
 
-.timeCounter {
-     font-size: 30px;
-}
-
-.inputName {
-    font-size: 30px;
-}
-
 footer {
+    flex-direction: column;
     text-align: center;
     padding: 12px 20px;
     background-color: #E7D1CD;
     font-size: 15px;
+}
+
+/* General: Asegura que header, main y footer estén en la capa superior */
+header, main, footer {
+    position: relative; /* Posición relativa para z-index */
+    z-index: 10; /* Capa superior */
+}
+
+
+.cartasAling {
+animation-name:cartas ;
+animation-duration: 2s;
+animation-timing-function: ease-in;
+animation-iteration-count: 1;    
+}
+
+@keyframes cartas  {
+  
+    0% {
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform: scale(1) translateX(-100%);
+    }
+    
+    50% {
+      opacity: 1;
+      transform: translateY(0px) rotate(-360deg) scale(1);
+    }  
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    
+  }
+
+
+/* Animación flotante (capa inferior) */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+.animacion-flotante {
+    position: absolute;
+    background-color: #E7D1CD; 
+    width: 100px;
+    height: 144px;
+    border-radius: 8px;
+    animation: floatAnimation 15s linear infinite;
+    opacity: 0;
+    z-index: -1; /* Envía las cartas detrás */
+}
+
+/* Variaciones de posición */
+.animacion-flotante:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.animacion-flotante:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.animacion-flotante:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.animacion-flotante:nth-child(4) {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.animacion-flotante:nth-child(5) {
+    left: 90%;
+    animation-delay: 8s;
 }
 
 @media all and (max-width: 992px) {
@@ -115,37 +206,119 @@ footer {
     }
 }
 
+
+	
 .sound-icon {
     height: 50px;
 }
+
+
+
 .restart-icon {
+
     height: 50px;
+
+	
+
 }
+
+	
+
+	
 
 .icons-container {
+
+	
+
     display: flex;
+
+	
+
     align-items: center;
+
+	
+
     gap: 10px;
+
+	
+
 }
+
+	
+
+	
 
 .sound-icon,
+
+	
+
 .restart-icon {
+
+	
+
     height: 50px;
+
+	
+
     cursor: pointer;
+
+	
+
 }
 
+	
+
+	
+
 .popup-overlay {
+
+	
+
     display: none;
+
+	
+
     position: fixed;
+
+	
+
     top: 0;
+
+	
+
     left: 0;
+
+	
+
     width: 100%;
+
+	
+
     height: 100%;
+
+	
+
     background-color: rgba(0, 0, 0, 0.5);
+
+	
+
     justify-content: center;
+
+	
+
     align-items: center;
+
+	
+
     z-index: 1000;
+
+	
+
 }
+
+	
+
+	
 
 .popup-content {
     background-color: #E7D1CD;
@@ -156,12 +329,20 @@ footer {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+	
+
+	
+
 .popup-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
 }
+
+	
+
+	
 
 .popup-buttons button {
     padding: 8px 20px;
@@ -172,11 +353,24 @@ footer {
     width: auto;
 }
 
+	
+
+	
+
 #confirm-restart {
     background-color: #b48c8c;
     color: white;
 }
 
+	
 #cancel-restart {
     background-color: #F2E8D9;
+}
+
+.button-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+  
 }

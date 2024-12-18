@@ -7,6 +7,14 @@
     <title>Arcana Memory Game</title>
 </head>
 <body>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
+        <div class="animacion-flotante"></div>
         <header>
             <div class="logo" onclick="window.location.href='login.html'">
                  <img src="img01/icono3.png" alt="Icono del juego">
@@ -32,24 +40,54 @@
         <section class="section1">
             <table class="cartasAling">
                 <tr>
-                   <td><button id="0" onclick="unCover(0)"></button></td>
-                   <td><button id="1" onclick="unCover(1)"></button></td>
-                   <td><button id="2" onclick="unCover(2)"></button></td>
-                </tr>
-                <tr>
-                    <td><button id="3" onclick="unCover(3)"></button></td>
-                    <td><button id="4" onclick="unCover(4)"></button></td>
-                    <td><button id="5" onclick="unCover(5)"></button></td>
+                    <td class="card-back">
+                    <button id="0" onclick="unCover(0)">
+                        <img class="button-image" src="/img01/11.webp" alt="Cover" >
+                    </button></td>
+                    
+                    <td><button id="1" onclick="unCover(1)">
+                         <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
+                    <td><button id="2" onclick="unCover(2)">
+                         <img class="button-image" src="/img01/11.webp" alt="Cover">
+                        </button></td>
+                  
                  </tr>
+
                 <tr>
-                    <td><button id="6" onclick="unCover(6)"></button></td>
-                    <td><button id="7" onclick="unCover(7)"></button></td>
-                    <td><button id="8" onclick="unCover(8)"></button></td>
+                    <td><button id="3" onclick="unCover(3)"> 
+                        <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
+                    <td><button id="4" onclick="unCover(4)">
+                         <img class="button-image" src="/img01/11.webp" alt="Cover">
+                        </button></td>
+                    <td><button id="5" onclick="unCover(5)">
+                         <img class="button-image" src="/img01/11.webp" alt="Cover">
+                        </button></td>
                  </tr>
+                 
                  <tr>
-                    <td><button id="9" onclick="unCover(9)"></button></td>
-                    <td><button id="10" onclick="unCover(10)"></button></td>
-                    <td><button id="11" onclick="unCover (11)"></button></td>
+                    <td><button id="6" onclick="unCover(6)"> 
+                        <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
+                    <td><button id="7" onclick="unCover(7)"> 
+                        <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
+                    <td><button id="8" onclick="unCover (8)"> 
+                        <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
+                 </tr>
+                
+                 <tr>
+                    <td><button id="9" onclick="unCover(9)"> 
+                        <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
+                    <td><button id="10" onclick="unCover(10)">
+                         <img class="button-image" src="/img01/11.webp" alt="Cover">
+                        </button></td>
+                    <td><button id="11" onclick="unCover(11)"> 
+                        <img class="button-image" src="/img01/11.webp" alt="Cover">
+                    </button></td>
                  </tr>
 
             </table>
@@ -58,12 +96,12 @@
 
         <section class="section2">
             <div>
-                <p class="inputName">Name: <span id="userName"></span></p>
-                 <h2 id="successes" class="stadistics">0</h2>
+                <p class="inputName">Name: </p>
+                 <h2 id="successes" class="stadistics"><span id="userName"></span></h2>
             </div>
             <div>
                 <p class="timeCounter">Time</p>
-                <h2 id="timeLeft" class="stadistics">Time: 30</h2>
+                <h2 id="timeLeft" class="stadistics">00:00</h2>
              </div>
         </section>
 

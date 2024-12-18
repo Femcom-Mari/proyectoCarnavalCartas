@@ -1,127 +1,164 @@
+/* Reset básico */
+* {
+    margin: 30;
+    padding: 0;
+
+}
+
 body {
     font-family: 'Kalam', cursive;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #F2E8D9; /* Color de fondo */
     display: flex;
-    flex-direction: column; /* Cambia a diseño en columna */
-    justify-content: flex-start; /* Asegura que el contenido comience desde arriba */
-    align-items: center; /* Centra horizontalmente */
-}
-
-.container {
-    width: 90%;
-    max-width: 25rem;
-    background-color: #E7D1CD; /* Color de fondo del contenedor */
-    padding: 2rem;
-    border-radius: 1rem; /* Bordes redondeados */
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F2E8D9;
     text-align: center;
-    margin-top: 100px;
-}
-
-h2 {
-    margin: 1rem 0; /* Espaciado superior e inferior */
-    font-size: 1.5rem; /* Tamaño de fuente más grande */
-}
-
-.board-option {
-    background-color:  #F2E8D9; /* Color de fondo del botón */
-    border: none;
-    padding: 0.625rem 1.25rem; /* Espaciado interno */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    cursor: pointer;
-    font-size: 1.25rem; /* Tamaño de fuente más grande */
-    margin-bottom: 1rem; /* Espaciado inferior */
-}
-
-input[type="text"] {
-    width: 80%;
-    padding: 0.625rem; /* Espaciado interno */
-    margin: 10px 0;
-    border: 1px solid #ccc; /* Borde */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    font-size: 1rem; /* Tamaño de fuente */
-    font-family: 'Kalam', cursive;
-}
-
-button {
-    background-color: #F2E8D9; /* Color de fondo del botón */
-    border: none;
-    padding: 0.625rem 1.25rem; /* Espaciado interno */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    cursor: pointer;
-    font-size: 1.25rem; /* Tamaño de fuente más grande */
-    height: 3rem; /* Altura fija para los botones */
-    font-family: 'Kalam', cursive;
-}
-
-#startButton {
-    margin-top: 1rem; /* Espaciado superior */
-}
-
-#error {
-    color: red;
-    font-size: 0.875rem; /* Tamaño de fuente */
-    margin-top: 10px;
-}
-
-/* Media query para pantallas más pequeñas */
-@media (max-width: 37.5em) { /* 600px en em */
-    .container {
-        width: 95%; /* Aumentar el ancho en pantallas pequeñas */
-    }
-
-    .board-option {
-        font-size: 1rem; /* Reducir el tamaño de fuente en pantallas pequeñas */
-    }
-
-    #startButton {
-        font-size: 1rem; /* Reducir el tamaño de fuente en pantallas pequeñas */
-    }
-}
-
-/* Media query para pantallas más grandes */
-@media (min-width: 37.625em) and (max-width: 56.25em) { /* 601px a 900px en em */
-    .container {
-        width: 85%; /* Aumentar el ancho en pantallas medianas */
-    }
-}
-
-/* Media query para pantallas aún más grandes */
-@media (min-width: 56.25em) { /* Pantallas más grandes de 900px */
-    .container {
-        width: 70%; /* Ajustar el ancho en pantallas grandes */
-    }
 }
 
 header {
-    display: flex;
+    display:flex;
+    flex-direction: row;
     background-color: #E7D1CD;
     align-items: center;
-    justify-content: space-between; /* Distribuye los elementos en extremos opuestos */
-    padding: 10px 20px; /* Espaciado interno para darle aire al contenido */
-    width: 100%; /* Asegura que el header ocupe todo el ancho */
-    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 5px 25px;
+    margin: 10px 0px ;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+
+h1.gamename {
+    font-size: smaller;
+    margin: 0;
 }
 
 .logo img {
     height: 50px;
-    margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
-.gameName {
-    font-size: 24px;
-    font-family: 'Kalam', cursive;
-    color: black;
+.logo {
+    display: flex;
+    gap: 10px;
 }
 
-.sound-icon {
+.restart-icon, .sound-icon {
     height: 50px;
+    margin-left: 10px; /* Espaciado entre los iconos */
+}
+
+.icons-container{
+    display: flex;
+    gap: 10px; /* Espacio entre botones de reset y sonido */
+}
+
+
+
+/* Contenedor principal */
+.container {
+    background-color: #E7D1CD;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+button, input {
+    font-family: 'Kalam', cursive;
+    margin: 0.5rem 0;
+    padding: 0.6rem 1rem;
+    border: 2px solid #D6A8A0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #D6A8A0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #C5948D;
+}
+
+input {
+    width: calc(100% - 2rem);
+}
+
+/* Error */
+#error {
+    margin-top: 0.5rem;
+    color: red;
+    font-size: 0.9rem;
+}
+
+
+footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #E7D1CD;
+    font-size: 15px;
+}
+
+
+/* General: Asegura que header, main y footer estén en la capa superior */
+header, main, footer {
+    position: relative; /* Posición relativa para z-index */
+    z-index: 10; /* Capa superior */
+}
+
+/* Animación flotante (capa inferior) */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.animacion-flotante {
+    position: absolute;
+    background-color: #E7D1CD; 
+    width: 100px;
+    height: 144px;
+    border-radius: 8px;
+    animation: floatAnimation 15s linear infinite;
+    opacity: 0;
+    z-index: -1; 
+}
+
+
+.animacion-flotante:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.animacion-flotante:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.animacion-flotante:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.animacion-flotante:nth-child(4) {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.animacion-flotante:nth-child(5) {
+    left: 90%;
+    animation-delay: 8s;
 }

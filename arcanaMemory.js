@@ -5,7 +5,7 @@ let firstResult = null;
 let secondResult = null;
 let successes = 0;
 let time = false;
-let timer = 30;
+let timer = 10;
 let countdownTime = null;
 
 let showSuccesses = document.getElementById('successes')
@@ -20,12 +20,13 @@ console.log(numbers)
 
 function countTime(){
     countdownTime = setInterval(()=> {
-    showTime.innerHTML = `Remaining time ${timer} seconds`;
+    showTime.innerHTML = `00:${timer}`;
     timer--;
     if(timer == 0){
     clearInterval(countdownTime);
     blockCards(numbers);
-    playSound(loseAudio);
+    loseAudio.play();
+    showTime.innerHTML = `Game Over! YOU LOSE!`;
     }
   },1000,timer);
 }
@@ -33,7 +34,7 @@ function countTime(){
 function blockCards(numbers){
     for (let i = 0; i<=11; i++){
         let blockCard = document.getElementById(i);
-        blockCard.innerHTML = numbers[i];
+        blockCard.innerHTML = `<img src="./images/${numbers[i]}.png" alt="Card image">`;
         blockCard.disabled = true;
     }
 }
@@ -66,22 +67,21 @@ function unCover(id){
         unCoverCards = 0; 
         card1.disabled = false;
         successes++
-        showSuccesses.innerHTML = `Successes: ${successes}`;
         playSound(rightAudio);
         
-        if(successes==6){
-            showSuccesses.innerHTML = `Successes: ${successes}` ;
+    if(successes==6){
+
             showTime.innerHTML = `Fantastic!`;
-            playSound(winnerAudio);
+            winnerAudio.play();
             clearInterval(countdownTime);
         }
         
     }else{
         setTimeout(()=>{
-            card1.innerHTML = "";
-            card2.innerHTML = "";
-            card1.disabled = false
-            card2.disabled = false
+            card1.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+            card2.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+            card1.disabled = false;
+            card2.disabled = false;
             unCoverCards = 0;
         },800)
     }
