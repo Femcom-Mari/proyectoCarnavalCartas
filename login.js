@@ -12,3 +12,7 @@ document.getElementById('startButton').addEventListener('click', function() {
         window.location.href = `memorize.html?name=${encodedName}`;
     }
 });
+
+document.getElementById('sound-icon').addEventListener('click', function() {
+    toggleSound(this); // Llama a la función para alternar el sonido y pasa el elemento de la imagen
+});

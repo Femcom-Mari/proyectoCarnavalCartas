@@ -2,13 +2,13 @@ body {
     font-family: 'Kalam', cursive;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     background-color: #F2E8D9; /* Color de fondo */
+    display: flex;
+    flex-direction: column; /* Cambia a diseño en columna */
+    justify-content: flex-start; /* Asegura que el contenido comience desde arriba */
+    align-items: center; /* Centra horizontalmente */
 }
-
 
 .container {
     width: 90%;
@@ -18,6 +18,7 @@ body {
     border-radius: 1rem; /* Bordes redondeados */
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     text-align: center;
+    margin-top: 100px;
 }
 
 h2 {
@@ -97,11 +98,12 @@ button {
 
 header {
     display: flex;
+    background-color: #E7D1CD;
     align-items: center;
-    justify-content: space-between; /* Espacio entre logo y icono de sonido */
-    background-color: #E7D1CD; /* Color de fondo del header */
-    padding: 1rem; /* Espaciado interno */
-    border-radius: 0 0 1rem 1rem; /* Bordes redondeados en la parte inferior */
+    justify-content: space-between; /* Distribuye los elementos en extremos opuestos */
+    padding: 10px 20px; /* Espaciado interno para darle aire al contenido */
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+    box-sizing: border-box;
 }
 
 .logo {
@@ -109,16 +111,17 @@ header {
     align-items: center;
 }
 
-.logo img.icon {
-    height: 40px; /* Ajustar la altura del icono */
-    margin-right: 10px; /* Espaciado entre el icono y el texto */
+.logo img {
+    height: 50px;
+    margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
 .gameName {
+    font-size: 24px;
     font-family: 'Kalam', cursive;
-    font-size: 1.5rem; /* Tamaño de fuente del nombre del juego */
+    color: black;
 }
 
-.sound-icon img.sound {
-    height: 30px; /* Ajustar la altura del icono de sonido */
+.sound-icon {
+    height: 50px;
 }

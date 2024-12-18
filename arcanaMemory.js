@@ -75,9 +75,11 @@ function unCover(id){
         showSuccesses.innerHTML = `Successes: ${successes}`;
         rightAudio.play()
         
-    if(successes==8){
-        showSuccesses.innerHTML = `Successes: ${successes}` ;
-        showTime.innerHTML = `Fantastic!`
+        if(successes==6){
+            showSuccesses.innerHTML = `Successes: ${successes}` ;
+            showTime.innerHTML = `Fantastic!`;
+            winnerAudio.play();
+            clearInterval(countdownTime);
         }
         
     }else{

@@ -8,9 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        
+    <header>
+        <div class="logo">
+            <img src="img01/icono3.png" alt="Icono del juego">
+            <h1 class="gameName">Arcana Memory Game</h1>
+        </div>
+        <img id="sound-icon" class="sound-icon" src="img01/soundOn.png" alt="Icono de sonido">
+    </header>
         <main>
+            <div class="container">
             <h2>Select the board</h2>
             <button class="board-option">12 Cards</button>
             <br>
@@ -19,9 +25,10 @@
             <button id="startButton">Start</button>
             <div id="error"></div>
         </main>
-    </div>
+    
     
     <script src="login.js"></script>
+    <script src="audioControl.js"></script>
 </body>
 
 
