@@ -7,6 +7,7 @@ body {
     background-color: #F2E8D9;
     text-align: center;
     overflow: hidden;
+    position: relative;
 }
 
 header {
@@ -15,34 +16,41 @@ header {
     background-color: #E7D1CD;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 25px;
+    padding: 0.3rem 1.5rem;
     margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 
 h1.gamename {
-    font-size: smaller;
+    font-size: medium;
     margin: 0;
+    
 }
 
 .logo img {
-    height: 50px;
+    height: 2.5rem;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 .logo {
     display: flex;
     gap: 10px;
+    align-items: center;
+    vertical-align: middle;
 }
 
 .restart-icon, .sound-icon {
-    height: 50px;
-    margin-left: 10px; 
+    height: 3.125rem;
+    margin-left: 0.625rem;
+    cursor: pointer;
 }
 
-.icons-container{
-    display: flex;
-    gap: 10px; 
-}
 
 main {
     display: flex;
@@ -61,14 +69,14 @@ h1 {
 }
 
 button {
-    height: 100px;
-    width: 100px;
+    height: 6.25rem;
+    width: 6.25rem;
     color: black;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     overflow: hidden;
 }
 
@@ -84,24 +92,24 @@ button img{
 .stadistics {
     
     border: 1px solid #b48c8c;
-    height: 50px;
-    border-radius: 6px;
+    height: 3.125rem;
+    border-radius: 0.375rem;
     background-color: #E7D1CD;
-    padding: 8px 20px;
+    padding: 0.5rem 1.25rem;
     box-sizing: border-box;
     text-align: center;
-    margin: 20px;
-    font-size: 30px;
-    margin: 10px;
+    margin: 1.25rem;
+    font-size: 1.875rem;
+    margin: 0.625rem;
 }
 
 .cartasAling {
     display: flex;
     justify-content: center;
-    justify-items: stretch;
-    box-sizing: border-box;
-    text-align: center;
-    margin: 20px;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    max-width: 90%;
+    margin: 1.25rem auto;
     width: 100%;
 }
 
@@ -113,20 +121,24 @@ button img{
     align-items: center;
     justify-content: center;
     justify-items: stretch;
-    margin: 10px;
+    margin: 0.625rem;
+    font-size: 1.875rem;
 }
+
 
 
 footer {
     flex-direction: column;
     text-align: center;
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
     background-color: #E7D1CD;
-    font-size: 15px;
+    font-size: 1.1rem;
     margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
-
-
 
 header, main, footer {
     position: relative; 
@@ -177,9 +189,9 @@ animation-iteration-count: 1;
 .animacion-flotante {
     position: absolute;
     background-color: #E7D1CD; 
-    width: 100px;
-    height: 144px;
-    border-radius: 8px;
+    width: 6.25rem;
+    height: 9rem;
+    border-radius: 0.5rem;
     animation: floatAnimation 15s linear infinite;
     opacity: 0;
     z-index: -1; 
@@ -258,10 +270,10 @@ animation-iteration-count: 1;
 
 .popup-content {
     background-color: #E7D1CD;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     text-align: center;
-    max-width: 300px;
+    max-width: 18.75rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -269,16 +281,16 @@ animation-iteration-count: 1;
 .popup-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 0.625rem;
+    margin-top: 1.25rem;
 }
 
 	
 
 .popup-buttons button {
-    padding: 8px 20px;
+    padding: 0.5rem 1.25rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     cursor: pointer;
     height: auto;
     width: auto;
@@ -301,5 +313,5 @@ animation-iteration-count: 1;
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 2px;
+    border-radius: 0.125rem;
 }

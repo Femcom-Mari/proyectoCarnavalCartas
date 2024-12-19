@@ -10,6 +10,16 @@ body {
     position: relative;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 1.4rem;
+}
+
 header {
     display:flex;
     flex-direction: row;
@@ -29,21 +39,26 @@ header {
 h1.gamename {
     font-size: medium;
     margin: 0;
+    
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 .logo {
     display: flex;
     gap: 10px;
-    
+    align-items: center;
+    vertical-align: middle;
 }
 
 .restart-icon, .sound-icon {
     height: 50px;
-    margin-left: 10px; 
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .icons-container{
@@ -67,17 +82,16 @@ h1.gamename {
 }
 
 h2 {
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 button, input {
     font-family: 'Kalam', cursive;
-    margin: 1rem 0;
+    margin: 0.3rem 0;
     padding: 0.6rem 1rem;
     border: 2px solid #c4a099;
     border-radius: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 button {
@@ -114,8 +128,6 @@ footer {
     left: 0;
     right: 0;
 }
-
-
 
 header, main, footer {
     position: relative; 
@@ -171,11 +183,3 @@ header, main, footer {
     animation-delay: 8s;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}

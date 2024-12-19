@@ -24,7 +24,7 @@ function countTime(){
     clearInterval(countdownTime);
     blockCards(numbers);
     playSound(loseAudio);
-    showTime.innerHTML = `Game Over! YOU LOSE!`;
+    showTime.innerHTML = `Game Over!`;
     }
   },1000,timer);
 }
