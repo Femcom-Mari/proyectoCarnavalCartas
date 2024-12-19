@@ -1,15 +1,13 @@
-* {
-    margin: 30;
-    padding: 0;
-}
-
 body {
+    margin: 0;
     font-family: 'Kalam', cursive;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #F2E8D9;
     text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
 header {
@@ -19,12 +17,17 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 5px 25px;
-    margin: 10px 0px ;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 
 h1.gamename {
-    font-size: smaller;
+    font-size: medium;
     margin: 0;
 }
 
@@ -35,6 +38,7 @@ h1.gamename {
 .logo {
     display: flex;
     gap: 10px;
+    
 }
 
 .restart-icon, .sound-icon {
@@ -49,32 +53,36 @@ h1.gamename {
 
 
 .container {
-    background-color: #E7D1CD;
-    padding: 2rem;
-    margin: 2rem auto;
+    background-color:  #E7D1CD;
+    padding: 3rem 2rem;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
+    max-width: 350px;
+    width: 80%;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
 }
 
 h2 {
     margin-bottom: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
 button, input {
     font-family: 'Kalam', cursive;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     padding: 0.6rem 1rem;
-    border: 2px solid #D6A8A0;
+    border: 2px solid #c4a099;
     border-radius: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 button {
-    background-color: #D6A8A0;
-    color: white;
+    background-color: #F2E8D9;
+    color: #1f1c1c;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -90,7 +98,7 @@ input {
 #error {
     margin-top: 0.5rem;
     color: red;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 
@@ -99,7 +107,12 @@ footer {
     text-align: center;
     padding: 12px 20px;
     background-color: #E7D1CD;
-    font-size: 15px;
+    font-size: 1.1rem;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 
@@ -156,4 +169,13 @@ header, main, footer {
 .animacion-flotante:nth-child(5) {
     left: 90%;
     animation-delay: 8s;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
