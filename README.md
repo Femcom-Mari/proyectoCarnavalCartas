@@ -26,7 +26,7 @@ Para instalar y ejecutar el juego en tu máquina local, sigue estos pasos:
 Primero, clona el repositorio del proyecto a tu máquina:
 
 ```bash
-git clone https://github.com/tuusuario/arcana-memory-game.git
+git clone https://github.com/Femcom-Mari/proyectoCarnavalCartas.git
 
 ### 2. Navega al directorio del proyecto
 
