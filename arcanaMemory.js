@@ -61,28 +61,29 @@ function unCover(id){
         card2.innerHTML = `<img src="./images/${secondResult}.png"  alt="card image">`;
         card2.disabled = true;
     
-        if(firstResult == secondResult){
-            unCoverCards = 0; 
-            card1.disabled = true; 
-            card2.disabled = true;
-            successes++;
-            playSound(rightAudio);
+    if(firstResult == secondResult){
+        unCoverCards = 0; 
+        card1.disabled = true; 
+        card2.disabled = true;
+        successes++;
+        playSound(rightAudio);
             
-            if(successes == 6){
-                showTime.innerHTML = `Fantastic!`;
-                winnerAudio.play();
-                clearInterval(countdownTime);
-                blockCards(numbers);
-            }
+    if(successes == 6){
+        showTime.innerHTML = `Fantastic!`;
+        winnerAudio.play();
+        clearInterval(countdownTime);
+        blockCards(numbers);
+        }
             
-        } else {
-            setTimeout(()=>{
-                card1.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
-                card2.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
-                card1.disabled = false;
-                card2.disabled = false;
-                unCoverCards = 0;
-            }, 800);
+    } else {
+        playSound(wrongAudio);
+        setTimeout(()=>{
+        card1.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+        card2.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+        card1.disabled = false;
+        card2.disabled = false;
+        unCoverCards = 0;
+        }, 800);
         }
     }
 }

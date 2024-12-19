@@ -7,7 +7,7 @@
 
 - **Juego de memoria**: El jugador debe emparejar cartas con imágenes.
 - **Interactividad**: Cada carta se voltea al hacer clic.
-- **Temporizador**: El jugador tiene 30 segundos para emparejar las cartas.
+- **Temporizador**: El jugador tiene 60 segundos para emparejar las cartas.
 - **Estadísticas**: El nombre del jugador y el puntaje se muestran durante el juego.
 - **Efectos de sonido**: Efectos de audio para las interacciones del jugador (clics, aciertos, fallos, victoria y derrota).
 
@@ -27,7 +27,6 @@ Primero, clona el repositorio del proyecto a tu máquina:
 
 ```bash
 git clone https://github.com/tuusuario/arcana-memory-game.git
-```
 
 ### 2. Navega al directorio del proyecto
 
@@ -39,16 +38,21 @@ cd arcana-memory-game
 
 El proyecto contiene los siguientes archivos principales:
 
-- **index.html**: Contiene la estructura HTML del juego.
+- **memorize.html**: Contiene la estructura HTML del juego.
 - **memorize.css**: Define los estilos visuales del juego.
 - **arcanaMemory.js**: Contiene la lógica del juego, incluyendo la funcionalidad para voltear cartas, iniciar el temporizador y manejar la interacción del jugador.
 - **domName.js**: Lógica para capturar e interactuar con el nombre del jugador y las estadísticas.
 - **sounds/**: Carpeta con los efectos de sonido utilizados en el juego (clics, aciertos, fallos, victoria y derrota).
-- **images/**: Carpeta con las imágenes de las cartas del juego.
+- **images/**: Carpeta con las imágenes de las cartas del juegos. 
+- **login.js**: Lógica para capturar e interactuar con el nombre del jugador y las estadísticas.
+- **domName.js**: Lógica para capturar e interactuar con el nombre del jugador y las estadísticas.
+- **audioControl.js**: Lógica para controlar los efectos de sonido del juego.
+- **restartControl.js**: Lógica para reiniciar el juego.
+- **login.html**: Contiene la estructura HTML del juego.
 
 ### 4. Abre el archivo HTML en tu navegador
 
-Puedes abrir el archivo `index.html` en cualquier navegador web moderno (como Chrome, Firefox, Safari, etc.) para comenzar a jugar. No se requieren dependencias adicionales.
+Puedes abrir el archivo `login.html` en cualquier navegador web moderno (como Chrome, Firefox, Safari, etc.) para comenzar a jugar. No se requieren dependencias adicionales.
 
 ## **Dependencias Técnicas**
 
@@ -56,10 +60,10 @@ Este proyecto no utiliza bibliotecas externas ni dependencias adicionales. Todo 
 
 ## **Lógica del Juego**
 
-El juego se basa en un temporizador que cuenta con 30 segundos para que el jugador encuentre todos los pares de cartas. A continuación se describe el flujo principal del juego:
+El juego se basa en un temporizador que cuenta con 60 segundos para que el jugador encuentre todos los pares de cartas. A continuación se describe el flujo principal del juego:
 
-- **Inicio**: El juego comienza cuando el jugador hace clic en la primera carta. El temporizador empieza a contar desde 30 segundos.
-- **Volteo de cartas**: Al hacer clic en una carta, esta se voltea mostrando una imagen asociada a un número.
+- **Inicio**: El juego comienza cuando el jugador hace clic en la primera carta. El temporizador empieza a contar desde 60 segundos.
+- **Volteo de cartas**: Al hacer clic en una carta, esta se voltea mostrando una imagen del tarot.
 - **Emparejamiento de cartas**: Si el jugador encuentra dos cartas con el mismo número, estas permanecen volteadas. De lo contrario, las cartas se vuelven a ocultar después de un breve intervalo.
 - **Victoria**: El jugador gana cuando empareja todas las cartas dentro del tiempo límite de 30 segundos. En este caso, se muestra un mensaje de éxito.
 - **Derrota**: Si el tiempo llega a cero sin emparejar todas las cartas, el juego se termina y el jugador pierde.
