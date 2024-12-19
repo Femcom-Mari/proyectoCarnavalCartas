@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     confirmButton.addEventListener('click', function() {
-        // Reiniciar el juego
+        
         location.reload();
     });
 

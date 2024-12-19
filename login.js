@@ -7,12 +7,12 @@ document.getElementById('startButton').addEventListener('click', function() {
         errorDiv.textContent = 'Please enter a valid name with only letters.';
     } else {
         errorDiv.textContent = '';
-        // Redirect to memorize.html with the name in the URL
+        
         const encodedName = encodeURIComponent(nameInput);
         window.location.href = `memorize.html?name=${encodedName}`;
     }
 });
 
 document.getElementById('sound-icon').addEventListener('click', function() {
-    toggleSound(this); // Llama a la función para alternar el sonido y pasa el elemento de la imagen
+    toggleSound(this); 
 });

@@ -134,7 +134,7 @@ header, main, footer {
     z-index: 10; 
 }
 
-/* Animación flotante (capa inferior) */
+
 @keyframes floatAnimation {
     0% {
         transform: translateY(100vh) rotate(0deg);
