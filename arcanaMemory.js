@@ -5,7 +5,7 @@ let firstResult = null;
 let secondResult = null;
 let successes = 0;
 let time = false;
-let timer = 10;
+let timer = 60;
 let countdownTime = null;
 
 let showSuccesses = document.getElementById('successes')
@@ -30,10 +30,10 @@ function countTime(){
 }
 
 function blockCards(numbers){
-    for (let i = 0; i<=11; i++){
+    for (let i = 0; i <= 11; i++){
         let blockCard = document.getElementById(i);
         blockCard.innerHTML = `<img src="./images/${numbers[i]}.png" alt="Card image">`;
-        
+        blockCard.disabled = true;
     }
 }
 
@@ -54,33 +54,35 @@ function unCover(id){
         card1.innerHTML = `<img src="./images/${firstResult}.png"  alt="Card image">`;
         card1.disabled = true;
         
-    }else if (unCoverCards==2) {
-       playSound(clickAudio);
-        card2 = document.getElementById (id);
+    } else if (unCoverCards == 2) {
+        playSound(clickAudio);
+        card2 = document.getElementById(id);
         secondResult = numbers[id];
-        card2.innerHTML =  `<img src="./images/${secondResult}.png"  alt="card image">`;
+        card2.innerHTML = `<img src="./images/${secondResult}.png"  alt="card image">`;
         card2.disabled = true;
     
-    if(firstResult == secondResult){
-        unCoverCards = 0; 
-        card1.disabled = false;
-        successes++
-        playSound(rightAudio);
-        
-    if(successes==6){
-            showTime.innerHTML = `Fantastic!`;
-            winnerAudio.play();
-            clearInterval(countdownTime);
+        if(firstResult == secondResult){
+            unCoverCards = 0; 
+            card1.disabled = true; 
+            card2.disabled = true;
+            successes++;
+            playSound(rightAudio);
+            
+            if(successes == 6){
+                showTime.innerHTML = `Fantastic!`;
+                winnerAudio.play();
+                clearInterval(countdownTime);
+                blockCards(numbers);
+            }
+            
+        } else {
+            setTimeout(()=>{
+                card1.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+                card2.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
+                card1.disabled = false;
+                card2.disabled = false;
+                unCoverCards = 0;
+            }, 800);
         }
-        
-    }else{
-        setTimeout(()=>{
-            card1.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
-            card2.innerHTML = '<img class="button-image" src="/img01/11.webp" alt="Cover">';
-            card1.disabled = false;
-            card2.disabled = false;
-            unCoverCards = 0;
-        },800)
-    }
     }
 }
